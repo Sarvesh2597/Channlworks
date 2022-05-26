@@ -1,0 +1,113 @@
+# Node Image for docker on which code will execute
+image: node:14
+
+# This is the stages / task to perfom in jobs
+stages:
+  - deploy_dev_03
+  - deploy_dev
+  - deploy_stage
+  - deploy_prod
+  
+# caching for reuse 
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+
+# Job for deploy build to dev server
+deploy_dev_03:
+  stage: deploy_dev_03
+  environment:
+    name: development
+    url: http://dev03app.channlworks.com
+  before_script:
+    - npm install
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - chmod 400 $DEV_PRIVATE_KEY
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - apt-get update -y
+    - apt-get -y install rsync
+  script:
+    - mv $DEV_03_ENV .env
+    - cat .env
+    - CI=false npm run build
+    - ssh -i $DEV_PRIVATE_KEY -p 4422 gitlab@$DEV_SERVER_IP
+    - rsync -zvhr -auv -e "ssh -i $DEV_PRIVATE_KEY -p 4422" build/ gitlab@$DEV_SERVER_IP:/var/www/html/dev03app.channlworks.com
+  only: ['db_migration_main']
+
+# Job for deploy build to dev server
+deploy_dev:
+  stage: deploy_dev
+  environment:
+    name: development
+    url: http://dev02app.channlworks.com
+  before_script:
+    - npm install
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - chmod 400 $DEV_PRIVATE_KEY
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - apt-get update -y
+    - apt-get -y install rsync
+  script:
+    - mv $DEV_ENV .env
+    - cat .env
+    - CI=false npm run build
+    - ssh -i $DEV_PRIVATE_KEY -p 4422 gitlab@$DEV_SERVER_IP
+    - rsync -zvhr -auv -e "ssh -i $DEV_PRIVATE_KEY -p 4422" build/ gitlab@$DEV_SERVER_IP:/var/www/html/dev02app.channlworks.com
+  only: ['master']
+
+# Job for deploy build to staging server
+deploy_stage:
+  stage: deploy_stage
+  needs: ["deploy_dev"]
+  environment:
+    name: staging
+    url: https://stgapp.channlworks.com
+  when: manual
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - chmod 400 $STG_PRIVATE_KEY
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - apt-get update -y
+    - apt-get -y install rsync
+  script:
+    - mv $STG_ENV .env
+    - cat .env
+    - CI=false npm run build
+    - ssh -i $STG_PRIVATE_KEY -p 4422 gitlab@$STG_SERVER_IP
+    - rsync --no-o --no-g -zvhr -auv -e "ssh -i $STG_PRIVATE_KEY -p 4422" build/ gitlab@$STG_SERVER_IP:/var/www/html/stgapp.channlworks.com
+  only: ['master']
+
+# Job for deploy build to production server
+deploy_prod:
+  stage: deploy_prod
+  needs: ["deploy_stage"]
+  environment:
+    name: production
+    url: https://app.channlworks.com
+  when: manual
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - chmod 400 $PROD_PRIVATE_KEY
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - apt-get update -y
+    - apt-get -y install rsync
+  script:
+    - mv $PROD_ENV .env
+    - cat .env
+    - CI=false npm run build
+    - ssh -i $PROD_PRIVATE_KEY -p 4422 gitlab@$PROD_SERVER_IP
+    - rsync --no-o --no-g -zvhr -auv -e "ssh -i $PROD_PRIVATE_KEY -p 4422" build/ gitlab@$PROD_SERVER_IP:/var/www/html/app.channlworks.com
+  only: ['master']

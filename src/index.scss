@@ -1,0 +1,247 @@
+// 3rd-party Plugins
+@import "~highlight.js/styles/googlecode.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+// Theme Styles
+@import "./_metronic/_assets/sass/style.react.scss";
+
+// Default Layout themes
+@import "./_metronic/_assets/sass/themes/layout/header/base/light.scss";
+@import "./_metronic/_assets/sass/themes/layout/header/menu/light.scss";
+@import "./_metronic/_assets/sass/themes/layout/brand/dark.scss";
+@import "./_metronic/_assets/sass/themes/layout/aside/dark.scss";
+
+// Header themes
+// Light
+//@import "./_metronic/_assets/sass/themes/layout/header/base/light.scss";
+// Dark
+// @import "./_metronic/_assets/sass/themes/layout/header/base/dark.scss";
+
+// Header Menu themes
+// Light
+//@import "./_metronic/_assets/sass/themes/layout/header/menu/light.scss";
+// Dark
+// @import "./_metronic/_assets/sass/themes/layout/header/menu/dark.scss";
+
+// Brand themes
+.brand-dark {
+  @import "./_metronic/_assets/sass/themes/layout/brand/dark.scss";
+}
+// Light
+.brand-light {
+  @import "./_metronic/_assets/sass/themes/layout/brand/light.scss";
+}
+
+// Aside themes
+// Dark
+//@import "./_metronic/_assets/sass/themes/layout/aside/dark.scss";
+// Light
+// @import "./_metronic/_assets/sass/themes/layout/aside/light.scss";
+
+// .example-highlight {
+//   padding: 0rem 1.5rem 1.75rem !important;
+// }
+
+.example-highlight > pre {
+  background: none transparent !important;
+  margin: 0 !important;
+  padding-top: 0.5rem;
+  code {
+    overflow-y: auto;
+    display: block;
+
+    span {
+      background: none transparent !important;
+    }
+  }
+}
+
+.json > pre {
+  background: none #fff !important;
+}
+
+.example-code > .json {
+  background: none #fff !important;
+}
+
+.symbol.symbol-45 > svg {
+  width: 100%;
+  max-width: 45px;
+  height: 45px;
+}
+
+.react-bootstrap-table {
+  overflow-x: auto;
+}
+
+.react-bootstrap-table {
+  th {
+    outline: none;
+
+    &.sortable {
+      .svg-icon-sort {
+        opacity: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .svg-icon-sort {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .table.table-head-custom thead tr {
+    .sortable-active {
+      color: $primary !important;
+    }
+  }
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.display-block {
+  display: block;
+}
+.card-box {
+  margin-top: -4%;
+}
+
+.card-boxHeight {
+  margin-top: -4%;
+}
+
+.card-bottom {
+  margin-bottom: -5%;
+}
+.table-height {
+  margin-top: -7%;
+}
+
+.csv-btn {
+  margin-top: -3%;
+}
+
+.table-height1 {
+  margin-top: -2%;
+}
+
+.label-position {
+  //margin-top: -3%;
+  margin-left: 10%;
+}
+
+.card-box2 {
+  margin-top: -6%;
+  margin-left: -6%;
+}
+
+.card-width {
+  width: 210px;
+}
+
+.table-text {
+  color: #b5b5c3;
+  text-transform: uppercase;
+  // font-weight: 600;
+  font-size: 12px;
+}
+
+.progress-bar {
+  width: 45%;
+}
+
+.container-box {
+  background: #fff;
+}
+
+.btn-box {
+  margin-top: -5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.heading-height {
+  margin-top: -3%;
+}
+
+.tooltip-btn {
+  width: 10px;
+}
+
+.table-width {
+  width: 75%;
+  margin-left: 12%;
+}
+
+.page-title {
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: -4%;
+}
+
+.image-box {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-btn {
+  margin-top: -2%;
+}
+
+.customscrollbar {
+  max-height: 430px;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e1f0ff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3699ff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1b71c7;
+}
+.csv-btn {
+  height: 32px;
+  padding-top: 6px;
+  margin-top: 1px;
+}
+
+// .table-body {
+//   overflow-y: scroll;
+//   max-height: 430px;
+// }
+
+// .table-container {
+//   overflow-y: scroll;
+//   max-height: 430px;
+//   overflow-x: hidden;
+// }
+
+.boarding-form {
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-box-container {
+  width: 80%;
+  margin-top: -4%;
+}

@@ -1,0 +1,307 @@
+//
+// Main Styles
+//
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 1: Initialize
+@import "init";
+
+// 2: Bootstrap/Material framework includes
+@import "~bootstrap/scss/bootstrap";
+@import "vendors/react/material-ui/general";
+
+//
+// Main Style
+//
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 1: Initialize
+@import "init";
+
+// 2: Bootstrap framework includes
+@import "~bootstrap/scss/bootstrap";
+
+
+// 3: Components
+@import
+    "components/utilities",
+    "components/burger-icon",
+    "components/card",
+    "components/wizard",
+    "components/type",
+    "components/breadcrumb",
+    "components/nav",
+    "components/alert",
+    "components/buttons",
+    "components/code",
+    "components/dropdown",
+    "components/forms",
+    "components/grid",
+    "components/modal",
+    "components/progress",
+    "components/table",
+    "components/popover",
+    "components/tooltip",
+    "components/accordion",
+    "components/datatable",
+    "components/checkbox",
+    "components/radio",
+    "components/switch",
+    "components/option",
+    "components/dialog",
+    "components/strikethrough",
+    "components/separator",
+    "components/image-input",
+    "components/label",
+    "components/loader",
+    "components/symbol",
+    "components/pulse",
+    "components/page-loader",
+    "components/quick-search",
+    "components/scrolltop",
+    "components/spinner",
+    "components/sticky-toolbar",
+    "components/svg-icon",
+    "components/svg",
+    "components/timeline",
+    "components/timeline-2",
+    "components/timeline-3",
+    "components/timeline-4",
+    "components/timeline-5",
+    "components/timeline-6",
+    "components/overlay",
+    "components/wave",
+    "components/list",
+    "components/bullet",
+    "components/navi",
+    "components/ribbon",
+    "components/offcanvas",
+    "components/toggle";
+
+// 4: Plugins
+@import
+    "vendors/plugins/formvalidation",
+    "vendors/plugins/dropzone",
+    "vendors/plugins/perfect-scrollbar",
+    "vendors/plugins/prismjs",
+    "vendors/plugins/apexcharts";
+
+// 5: Layout
+@import "layout/init";
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+@media print {
+    #printPageButton {
+      display: none;
+    }
+    
+    // body *:not(#printarea) {
+    //   display: none;
+    // }
+    // #printarea{
+    //   display: block;
+    // }
+  }
+
+  .custom-input{
+    width: 45%!important;
+    border:none!important;
+    outline: none!important;
+  }
+
+  .custom-input-wrapper{
+    padding: 1rem;
+    display: inline-flex;
+    border: 1px solid #EBEDF3;
+    flex-wrap: wrap;
+}
+
+.equal-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.equal-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-100{
+  height: 100%;
+}
+
+.bg-warning{
+  background-color:#EBEDF3!important;
+  color: black;
+}
+
+.label.label-inline.label-md{
+  height: auto!important;
+  padding: 0.3rem 0.6rem;
+}
+
+.label.label-inline.label-lg{
+  height: auto!important;
+  padding: 0.3rem 0.6rem;
+}
+
+.apexcharts-tooltip{
+  display: none!important;
+}
+.label{
+  height: auto!important;
+}
+
+.table-body{
+  display: table!important;
+  width: 100%!important;
+ 
+}
+
+
+.table-container{
+  max-height: 430px;
+  max-width: 100%;
+  overflow: auto!important;
+}
+
+
+
+
+table {
+  position: relative;
+  
+}
+thead{
+  background: white;
+  border-bottom: 1px solid #EBEDF3;
+}
+th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  min-width: 100px;
+}
+
+td{max-width:150px;}
+
+
+.rupee-symbol{
+  font-family: Roboto , Arial, sans-serif;
+}
+
+.chart-card{
+  // padding:20%;
+}
+
+.chart-reset-btn{
+  position: absolute;
+  top: 69%;
+  right: 47%;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+
+@media screen {
+  #printSection {
+      display: none;
+  }
+}
+
+@media print {
+  body * {
+    visibility:hidden;
+  }
+  #printSection, #printSection * {
+    visibility:visible;
+  }
+  #printSection {
+    position:absolute;
+    left:0;
+    top:0;
+  }
+}
+
+
+.default-option{
+  background-color:lightgrey;
+}
+
+// @media (min-width: 1200px) {
+//   /* This part is only read by viewports wider than 1200 pixels */
+//  td,th{
+//    font-size: 1rem;
+//    padding: 0.45rem;
+//    min-width: 100px;
+//    max-width: 100px;
+//  }
+// }
+
+.disabled-certificate{
+  background-color: lightgray;
+  pointer-events: none;
+}
+
+
+.autocomplete{
+  position: relative;
+  input {
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  .no-suggestions {
+    color: #999;
+    padding: 0.5rem;
+  }
+  
+  .suggestions {
+    border: 1px solid #999;
+    border-top-width: 0;
+    list-style: none;
+    margin-top: 0;
+    max-height: 143px;
+    overflow-y: auto;
+    padding-left: 0;
+    width: 100%;
+    position: absolute;
+    background: white;
+  }
+  
+  .suggestions li {
+    padding: 0.5rem;
+  }
+  
+  .suggestion-active,
+  .suggestions li:hover {
+    background-color: #3F95FA;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .dropdown-icon{
+    position: absolute;
+    top: 14px;
+    font-size: 0.8rem;
+    color: black;
+    right: 4px;  
+  }
+  
+  // .suggestions li:not(:last-of-type) {
+  //   border-bottom: 1px solid #999;
+  // }
+  
+}

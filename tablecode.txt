@@ -1,0 +1,154 @@
+  <div className="row">
+            <div className="col-lg-12">
+              <div className="my-7"></div>
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email ID</th>
+                    <th>Is Active</th>
+                    <th>Joined On</th>
+                    <th className="text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Human Resources</td>
+                    <td>bhavnas@ptnrworld.com</td>
+                    <td>
+                      <Badge variant="success">Yes</Badge>
+                    </td>
+                    <td>23-11-2020</td>
+                    <td className="text-center 1px solid #ebedf3">
+                      <a
+                        title="Edit customer"
+                        className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-primary">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/Communication/Write.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                      <a
+                        title="Delete customer"
+                        className="btn btn-icon btn-light btn-hover-danger btn-sm"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-danger">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/General/Trash.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sales Lead</td>
+                    <td>anurupav@ptnrworld.com</td>
+                    <td>
+                      <Badge variant="success">Yes</Badge>
+                    </td>
+                    <td>11-11-2017</td>
+                    <td className="text-center 1px solid #ebedf3">
+                      <a
+                        title="Edit customer"
+                        className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-primary">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/Communication/Write.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                      <a
+                        title="Delete customer"
+                        className="btn btn-icon btn-light btn-hover-danger btn-sm"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-danger">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/General/Trash.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Org Admin</td>
+                    <td>demo@ptnrworld.com</td>
+                    <td>
+                      <Badge variant="success">Yes</Badge>
+                    </td>
+                    <td>23-11-2020</td>
+                    <td className="text-center 1px solid #ebedf3">
+                      <a
+                        title="Edit customer"
+                        className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-primary">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/Communication/Write.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                      <a
+                        title="Delete customer"
+                        className="btn btn-icon btn-light btn-hover-danger btn-sm"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-danger">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/General/Trash.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Human Resources</td>
+                    <td>himnashu@ptnrworld.com</td>
+                    <td>
+                      <Badge variant="success">Yes</Badge>
+                    </td>
+                    <td>23-01-2019</td>
+                    <td className="text-center 1px solid #ebedf3">
+                      <a
+                        title="Edit customer"
+                        className="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-primary">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/Communication/Write.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                      <a
+                        title="Delete customer"
+                        className="btn btn-icon btn-light btn-hover-danger btn-sm"
+                      >
+                        <span className="svg-icon svg-icon-md svg-icon-danger">
+                          <SVG
+                            src={toAbsoluteUrl(
+                              "/media/svg/icons/General/Trash.svg"
+                            )}
+                          />
+                        </span>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          </div>
